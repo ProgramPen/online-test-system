@@ -1,0 +1,112 @@
+<!--将当前HTML文件变成thymeleaf模板，使之可以接收后端信息-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>考研客观题</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/login2.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style>
+        .on{
+            padding-left: 25px;
+            padding-right: 25px;
+            font-size: 16px;
+            color: #000;
+            text-decoration: none;
+
+        }
+    </style>
+    <script type="text/javascript">
+
+    </script>
+</head>
+
+<body style="background-color:#f5f5f5">
+<!--顶部-->
+<div th:replace="head :: top">
+</div>
+
+<!--中部-->
+<div id="middle1" style="position: relative;width: 1170px;margin: 0 auto;display: block;height: 80px">
+    <div class="exam-change-subj" style="height: 80px;padding-top: 26px;padding-bottom: 10px;background: url('image/paper.png') no-repeat 0px 28px;font-size: 26px;padding-left: 50px;line-height: 40px;">
+           考研公共课
+    </div>
+</div>
+
+<div class="middle1" style="position: relative;width: 1170px;overflow: hidden;margin: 0 auto;display: block;height: 100px;background:white;margin-top: 15px;padding-bottom: 15px;margin-bottom: 25px;">
+    <div class="exam-change-subj-tab-ol-in" style="height: 21px;padding-top: 10px;padding-bottom: 10px;">
+        <a href="/Papers/4/0/1" class="on">政治</a>
+        <a href="/Papers/5/0/1" class="on">英语一</a>
+        <a href="/Papers/2209/0/1" class="on" >英语二</a>
+        <a href="/Papers/6/0/1" class="on" >数学一</a>
+        <a href="/Papers/2397/0/1" class="on" >数学二</a>
+        <a href="/Papers/2398/0/1" class="on">数学三</a>
+    </div>
+    <hr style="color: blue">
+    <div class="exam-change-subj-tab-ol-in" style="height: 21px;padding-bottom: 10px;font-size: 16px;">
+        <a href="/Papers/4/2/1" class="on">历年真题</a>
+        <a href="/Papers/4/3/1" class="on">章节练习</a>
+        <a href="/Papers/4/1/1" class="on">模拟练习</a>
+    </div>
+
+</div>
+
+<div class="container" style="background-color: white;margin-top:30px " >
+    <div class="row" style="margin-left: 10px">
+        <h3>政治&nbsp;&nbsp;
+            <small>温馨提示：<em>${user.name}</em>有<font color="red">${ordersList.size()}</font>个试卷</small></h3>
+    </div>
+    <div class="row" style="margin-top: 10px;">
+        <div class="col-md-12">
+            <table id="tb_list" class="table table-striped table-hover table-bordered table-condensed">
+                <tr>
+                    <th>试卷名称</th>
+                    <th>价格</th>
+                    <th>测评次数</th>
+                    <th>开始日期</th>
+                    <th>结束日期</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+
+                <tbody align="center">
+                    <tr>
+                        <td style="font-size: 16px;text-align:center">2021年摸底联考--政治<br>
+                            <span style="display: block;font-size: 14px;color: #666;">
+                                <span style="padding-right: 20px;">总题：38</span>
+                                <span style="padding-right: 20px;">考试时间：180分钟</span>
+                                <span style="padding-right: 20px;">总分：100分</span>
+                            </span>
+                        </td>
+                        <td style="color: red;font-size: 16px">免费</td>
+                        <td style="font-size: 16px">
+                            <span style="color: red;font-size: 16px">0</span>/不限
+                        </td>
+                        <td style="font-size: 16px">2021-04-14</td>
+                        <td style="font-size: 16px">2021-04-15</td>
+                        <td style="font-size: 16px">未开始</td>
+                        <td style="font-size: 16px"><button type="button" class="btn btn-danger btn-sm" onclick="showOrder('${order.oid}')">开始做题</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- 底部 -->
+<div style="margin-top: 400px">
+    <footer>
+        <div th:replace="footer :: #footer">
+
+        </div>
+
+    </footer>
+</div>
+
+</body>
+</html>

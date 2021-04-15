@@ -1,0 +1,102 @@
+<!--将当前HTML文件变成thymeleaf模板，使之可以接收后端信息-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>考研客观题</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/login2.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style>
+        .on{
+            padding-left: 25px;
+            padding-right: 25px;
+            font-size: 16px;
+            color: #000;
+            text-decoration: none;
+
+        }
+    </style>
+    <script type="text/javascript">
+
+    </script>
+</head>
+
+<body style="background-color:#f5f5f5">
+<!--顶部-->
+<div th:replace="head :: top">
+</div>
+
+<!--中部-->
+<div id="middle1" style="position: relative;width: 1170px;margin: 0 auto;display: block;height: 80px">
+    <div class="exam-change-subj" style="height: 80px;padding-top: 26px;padding-bottom: 10px;background: url('image/paper.png') no-repeat 0px 28px;font-size: 26px;padding-left: 50px;line-height: 40px;">
+        考研公共课
+    </div>
+</div>
+
+<div class="middle1" style="position: relative;width: 1170px;overflow: hidden;margin: 0 auto;display: block;height: 100px;background:white;margin-top: 15px;padding-bottom: 15px;margin-bottom: 25px;">
+    <div class="exam-change-subj-tab-ol-in" style="height: 21px;padding-top: 10px;padding-bottom: 10px;">
+        <a href="/Papers/4/0/1" class="on">政治</a>
+        <a href="/Papers/5/0/1" class="on">英语一</a>
+        <a href="/Papers/2209/0/1" class="on" >英语二</a>
+        <a href="/Papers/6/0/1" class="on" >数学一</a>
+        <a href="/Papers/2397/0/1" class="on" >数学二</a>
+        <a href="/Papers/2398/0/1" class="on">数学三</a>
+    </div>
+    <hr style="color: blue">
+    <div class="exam-change-subj-tab-ol-in" style="height: 21px;padding-bottom: 10px;font-size: 16px;">
+        <a href="/Papers/4/2/1" class="on">历年真题</a>
+        <a href="/Papers/4/3/1" class="on">章节练习</a>
+        <a href="/Papers/4/1/1" class="on">模拟练习</a>
+    </div>
+</div>
+
+<div style="margin-top:30px;width: 1170px;height: 90px;margin:auto" >
+    <span id="title" style="text-align:center;margin: 0 auto;display: block;padding-top: 35px;background: #ebebeb;font-size: 30px;">
+        2021考研摸底联考--政治
+    </span>
+</div>
+<div style="width: 1170px;margin: 0 auto;padding-top: 30px;background: #fff;overflow: hidden;padding-bottom: 100px;height: 370px">
+    <div class="" style="padding-left:178px;overflow: hidden;padding-right: 0px;">
+                <span class="" style="margin-bottom: 40px;overflow: hidden;width: 265px;height: 37px;font-size: 22px;line-height: 37px;float: left;">
+                    <img th:src="@{image/score.png}" height="34" width="32" alt="" class="fl">
+                    <span class="" style="font-size: 22px;line-height: 37px;">总分：100分</span>
+                </span>
+        <span class=""style="margin-bottom: 40px;overflow: hidden;width: 265px;height: 37px;font-size: 22px;line-height: 37px;float: left;">
+                    <img th:src="@{image/exam.png}" height="34" width="30" alt="" class="fl">
+                    <span class="fl">总题数：38道</span>
+                </span>
+        <span class="" style="margin-bottom: 40px;overflow: hidden;width: 265px;height: 37px;font-size: 22px;line-height: 37px;float: left;">
+                    <img th:src="@{image/time.png}" height="34" width="33" alt="" class="fl">
+                    <span class="fl">时间：180分钟</span>
+                </span>
+        <!--隐藏试卷号-->
+        <input type="hidden" id="hidprice" value="0">
+    </div>
+    <!--开始按钮-->
+    <a id="btnstarttest" href="" class="exam-change-stsubj-tab-con-startdo" situation="0" style="font-size: 20px;color: #fff;width: 210px;height: 40px;text-align: center;line-height: 40px;background: #5ecef3;display: block;margin: 0 auto;">开始考试</a>
+
+    <span style="display: block;font-size: 18px;line-height: 30px;text-align: center;width: 152px;height: 38px;background: url('image/title.png') no-repeat left top;margin-left: -17px;">题型介绍</span>
+    <div style="margin-left: 37px;overflow: hidden;padding-left: 8px;">
+        <div style="padding-top: 20px;padding-bottom: 25px;border-left: 1px solid #f6f6f6;">
+            <span style="display: block;margin-left: -8px;background: url('image/exam-step.png') no-repeat 0 6px;font-size: 18px;padding-left: 25px;padding-bottom: 20px;line-height: 30px;">2021考研摸底联考“题王争霸赛”政治单选</span>
+            <p style="font-size: 16px;padding-left: 25px;margin: 0;display: block;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;"></p>
+            <p style="line-height: 32px;font-size: 16px;padding-left: 25px;margin: 0;display: block;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;">单项选择题：1-16 小题，每小题 1 分，共 16 分。下列每题给出的四个选项中，只有一个选项是符合题目要求的。</p>
+            <p style="font-size: 16px;padding-left: 25px;margin: 0;display: block;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;"></p>
+        </div>
+    </div>
+</div>
+
+<!-- 底部 -->
+<div style="margin-top: 400px">
+    <footer>
+        <div th:replace="footer :: #footer">
+
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
